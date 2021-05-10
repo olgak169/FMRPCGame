@@ -636,8 +636,9 @@ header {
     width: -webkit-max-content;
     width: -moz-max-content;
     width: max-content;
+    min-width: 30%;
     left: 50%;
-    bottom: 6rem;
+    bottom: 10%;
     -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
   }
@@ -714,8 +715,8 @@ header {
     width: 60%;
   }
   .stage-1.open {
-    -webkit-transform: translateY(-250%);
-            transform: translateY(-250%);
+    -webkit-transform: translateY(-230%);
+            transform: translateY(-230%);
   }
   .stage-1 .placeholder {
     width: 8rem;
@@ -772,6 +773,13 @@ header {
   .rules-container .rules-inner #close-rules {
     top: 100%;
     right: 50%;
+  }
+  .rules-btn {
+    bottom: 4rem;
+  }
+  .x3,
+  .x5 {
+    bottom: 1rem;
   }
   .container {
     max-width: 90%;

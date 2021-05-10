@@ -487,8 +487,9 @@ header {
     .x3,
     .x5 {
         width: max-content;
+        min-width: 30%;
         left: 50%;
-        bottom: 6rem;
+        bottom: 10%;
         transform: translateX(-50%);
     }
     .container {
@@ -556,7 +557,7 @@ header {
             width: 60%;
         }
         &.open {
-            transform: translateY(-250%);
+            transform: translateY(-230%);
         }
         .placeholder {
             width: 8rem;
@@ -607,6 +608,13 @@ header {
                 right: 50%;
             }
         }
+    }
+    .rules-btn {
+        bottom: 4rem;
+    }
+    .x3,
+    .x5 {
+        bottom: 1rem;
     }
     .container {
         max-width: 90%;
