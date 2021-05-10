@@ -806,6 +806,7 @@ header {
   .stage-1 .placeholder {
     width: 6rem;
     height: 6rem;
+    margin-bottom: 4rem;
   }
   .bonus {
     padding: 0 1rem;
