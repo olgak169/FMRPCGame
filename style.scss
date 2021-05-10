@@ -481,14 +481,14 @@ header {
     }
     .rules-btn {
         left: 50%;
-        bottom: 10rem;
+        bottom: 9rem;
         transform: translateX(-50%);
     }
     .x3,
     .x5 {
         width: max-content;
         left: 50%;
-        bottom: 10%;
+        bottom: 6;
         transform: translateX(-50%);
     }
     .container {
@@ -609,11 +609,11 @@ header {
         }
     }
     .rules-btn {
-        bottom: 4rem;
+        bottom: 5rem;
     }
     .x3,
     .x5 {
-        bottom: 1rem;
+        bottom: 2rem;
         min-width: 50%;
         width: fit-content;
     }

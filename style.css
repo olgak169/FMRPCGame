@@ -627,7 +627,7 @@ header {
   }
   .rules-btn {
     left: 50%;
-    bottom: 10rem;
+    bottom: 9rem;
     -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
   }
@@ -637,7 +637,7 @@ header {
     width: -moz-max-content;
     width: max-content;
     left: 50%;
-    bottom: 10%;
+    bottom: 6;
     -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
   }
@@ -774,11 +774,11 @@ header {
     right: 50%;
   }
   .rules-btn {
-    bottom: 4rem;
+    bottom: 5rem;
   }
   .x3,
   .x5 {
-    bottom: 1rem;
+    bottom: 2rem;
     min-width: 50%;
     width: -webkit-fit-content;
     width: -moz-fit-content;
