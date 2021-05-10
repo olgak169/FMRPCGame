@@ -780,6 +780,7 @@ header {
   .x3,
   .x5 {
     bottom: 1rem;
+    min-width: 50%;
   }
   .container {
     max-width: 90%;
