@@ -307,8 +307,8 @@ header {
 }
 
 .stage-1.step-1 .placeholder {
-  -webkit-animation: itemScale 1s 5;
-          animation: itemScale 1s 5;
+  -webkit-animation: itemScale 1s 3;
+          animation: itemScale 1s 3;
 }
 
 .stage-1.open {
@@ -348,6 +348,10 @@ header {
   -webkit-animation: pulse 1s 5;
           animation: pulse 1s 5;
   visibility: hidden;
+}
+
+.stage-1 .placeholder.open {
+  background: transparent;
 }
 
 .stage-1 .placeholder.open::before {
@@ -807,9 +811,6 @@ header {
     width: 6rem;
     height: 6rem;
     margin-bottom: 4rem;
-  }
-  .stage-1 .item-choice {
-    margin-bottom: 2rem;
   }
   .bonus {
     padding: 0 1rem;

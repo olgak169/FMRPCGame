@@ -228,7 +228,7 @@ header {
     &.step-1 {
         transition: width 0.5s ease , transform 1.5s ease 0.5s;
         .placeholder{
-            animation: itemScale 1s 5;
+            animation: itemScale 1s 3;
         }
     }
     &.open {
@@ -260,9 +260,12 @@ header {
             visibility: hidden;
         }
 
-        &.open::before {
-            visibility: visible;
-            animation: pulse 2s 10;
+        &.open {
+            background: transparent;
+            &::before {
+                visibility: visible;
+                animation: pulse 2s 10;
+            }
         }
         &.fade {
             animation: itemsFade 1s;
@@ -639,9 +642,6 @@ header {
             width: 6rem;
             height: 6rem;
             margin-bottom: 4rem;
-        }
-        .item-choice {
-            margin-bottom: 2rem;
         }
     }
     .bonus {
