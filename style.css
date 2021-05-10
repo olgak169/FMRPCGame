@@ -636,7 +636,6 @@ header {
     width: -webkit-max-content;
     width: -moz-max-content;
     width: max-content;
-    min-width: 30%;
     left: 50%;
     bottom: 10%;
     -webkit-transform: translateX(-50%);
@@ -781,6 +780,9 @@ header {
   .x5 {
     bottom: 1rem;
     min-width: 50%;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
   }
   .container {
     max-width: 90%;
@@ -802,8 +804,8 @@ header {
     width: 85%;
   }
   .stage-1 .placeholder {
-    width: 6.5rem;
-    height: 6.5rem;
+    width: 6rem;
+    height: 6rem;
   }
   .bonus {
     padding: 0 1rem;
