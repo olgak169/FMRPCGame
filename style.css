@@ -810,8 +810,8 @@ header {
     height: 30vh;
   }
   .bonus.open {
-    -webkit-transform: translate(0, -135%);
-            transform: translate(0, -135%);
+    -webkit-transform: translate(0, -145%);
+            transform: translate(0, -145%);
   }
   .bonus .item {
     width: 6rem;
