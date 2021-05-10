@@ -808,6 +808,9 @@ header {
     height: 6rem;
     margin-bottom: 4rem;
   }
+  .stage-1 .item-choice {
+    margin-bottom: 2rem;
+  }
   .bonus {
     padding: 0 1rem;
     height: 30vh;
