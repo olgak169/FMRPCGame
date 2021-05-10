@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./images/favicon-32x32.png"
+        />
+        <link rel="stylesheet" href="style.css" />
+        <title>RPC Game</title>
+    </head>
+    <body>
+        <div class="rules-container">
+            <div class="rules-inner">
+                <h3>Rules</h3>
+                <button id="close-rules">
+                    <img src="./images/icon-close.svg" alt="close icon" />
+                </button>
+                <img src="./images/image-rules.svg" alt="rules" id="rules-img" />
+                <p>To reset score click on the score card</p>
+            </div>
+        </div>
+        <button class="rules-btn btn">Rules</button>
+        <button class="x5 btn">5 item game</button>
+        <button class="x3 btn hidden">3 item game</button>
+        <header>
+            <div class="logo">
+                <img src="./images/logo.svg" alt="game logo" id="logo" />
+            </div>
+            <div class="score-card">
+                <p>score</p>
+                <span id="score"></span>
+            </div>
+        </header>
+
+        <div class="container original">
+            <div class="item paper item-init" id="paper" data-value="paper">
+                <div class="item-inner"></div>
+            </div>
+            <div class="item scissors item-init" id="scissors" data-value="scissors">
+                <div class="item-inner"></div>
+            </div>
+            <div class="item rock item-init" id="rock" data-value="rock">
+                <div class="item-inner"></div>
+            </div>
+        </div>
+        <div class="container bonus">
+            <div class="item scissors item-init" id="scissorsB" data-value="scissors">
+                <div class="item-inner"></div>
+            </div>
+            <div class="item spock item-init" id="spockB" data-value="spock">
+                <div class="item-inner"></div>
+            </div>
+            <div class="item paper item-init" id="paperB" data-value="paper">
+                <div class="item-inner"></div>
+            </div>
+            <div class="item lizard item-init" id="lizardB" data-value="lizard">
+                <div class="item-inner"></div>
+            </div>
+            <div class="item rock item-init" id="rockB" data-value="rock">
+                <div class="item-inner"></div>
+            </div>
+        </div>
+        <div class="container stage-1">
+            <div class="placeholder pl-left"></div>
+            <div class="placeholder pl-right"></div>
+            <div class="outcome">
+                <span id="outcome-title"></span>
+                <button id="restart-game">Play again</button>
+            </div>
+        </div>
+
+        <script src="app.js"></script>
+    </body>
+</html>
