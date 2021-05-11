@@ -29,7 +29,7 @@ body {
 }
 
 .btn {
-    position: fixed;
+    position: absolute;
     background: transparent;
     color: $white;
     font-weight: 600;
@@ -42,14 +42,14 @@ body {
     padding: 0.6rem 2.2rem;
     cursor: pointer;
     z-index: 4;
-    transition: left 1s ease 1s;
+    transition: top 1s ease 1s;
     &:active,
     &:focus {
         outline: none;
     }
     
     &.hidden {
-        left: 300%;
+        top: 300%;
     }
 }
 .x5, .x3 {
@@ -169,6 +169,8 @@ main {
     max-width: 90%;
     height: 50vh;
     position: absolute;
+    left: 50%;
+    top: 35%;
     transform: translate(-50%,-50%);
 }
 .original {
@@ -177,16 +179,13 @@ main {
     justify-content: center;
     flex-wrap: wrap;
     padding: 0 4rem;
-    transition: left 1s ease 1.8s;
-    left: 50%;
-    top: 30%;
+    transition: opacity 1s ease 1.5s;
     &.hidden {
-        left: -200%;
+        opacity: 0;
+        z-index: -1;
     }
 }
 .bonus {
-    left: 200%;
-    top: 30%;
     background: url(./images/bg-pentagon.svg) no-repeat center center;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -196,12 +195,12 @@ main {
     justify-items: center;
     padding: 0 6rem;
     opacity: 0;
-    transition: left 1s ease 0.5s, opacity 5.5s ease;
+    transition: opacity 1s ease;
+    z-index: -1;
     &.open {
-        left: 50%;
-        top: 35%;
+        z-index: 2;
         opacity: 1;
-        transition: left 1s ease 1.5s, opacity 1.5s ease;
+        transition: opacity 1.5s ease;
     }
     .item {
         width: 9rem;
@@ -234,23 +233,22 @@ main {
     }
 }
 .stage-1 {
-    left: 50%;
-    top: 300%;
+    z-index: -1;
     opacity: 0;
     align-items: center;
     justify-content: space-between;
     display: flex;
     &.step-1 {
-        transition: width 0.5s ease , top 1.5s ease 0.5s;
+        transition: width 0.5s ease , opacity 1.5s ease 0.5s;
+        opacity: 1;
         .placeholder{
             animation: itemScale 1s 3;
         }
     }
     &.open {
-        transition: width 0.5s ease , top 1.5s ease 2.5s;
-        left: 50%;
-        top: 35%;
+        transition: width 0.5s ease , opacity 1.5s ease 2.5s;
         opacity: 1;
+        z-index: 3;
     }
     &.final {
         width: 60rem;
@@ -438,6 +436,7 @@ main {
     transform: translate(-50%,-50%);
     display: none;
     flex-direction: column;
+    align-items: center;
     text-align: center;
     span {
         font-size: 3.5rem;
@@ -531,10 +530,9 @@ main {
         margin: 0;
     }
     .bonus {
-        display: block;
+        display: flow-root;
         background-size: contain;
         padding: 0;
-        top: 35%;
         .item{
             width: 7rem;
             height: 7rem;
@@ -568,11 +566,9 @@ main {
             width: 60%;
         }
         &.open {
-            left: 50%;
             top: 25%;
         }
         &.step-1 {
-            transition: width 0.5s ease , top 1.5s ease 0.5s;
             .placeholder{
                 background-color: transparent;
             }
@@ -627,7 +623,9 @@ main {
             }
         }
     }
-
+    .x5, .x3 {
+        top: 85%;
+    }
     .container {
         max-width: 90%;
         width: 85%;

@@ -17,7 +17,7 @@ body {
 }
 
 .btn {
-  position: fixed;
+  position: absolute;
   background: transparent;
   color: #f2f2f2;
   font-weight: 600;
@@ -30,8 +30,8 @@ body {
   padding: 0.6rem 2.2rem;
   cursor: pointer;
   z-index: 4;
-  -webkit-transition: left 1s ease 1s;
-  transition: left 1s ease 1s;
+  -webkit-transition: top 1s ease 1s;
+  transition: top 1s ease 1s;
 }
 
 .btn:active, .btn:focus {
@@ -39,7 +39,7 @@ body {
 }
 
 .btn.hidden {
-  left: 300%;
+  top: 300%;
 }
 
 .x5, .x3 {
@@ -188,6 +188,8 @@ main {
   max-width: 90%;
   height: 50vh;
   position: absolute;
+  left: 50%;
+  top: 35%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
 }
@@ -203,19 +205,16 @@ main {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   padding: 0 4rem;
-  -webkit-transition: left 1s ease 1.8s;
-  transition: left 1s ease 1.8s;
-  left: 50%;
-  top: 30%;
+  -webkit-transition: opacity 1s ease 1.5s;
+  transition: opacity 1s ease 1.5s;
 }
 
 .original.hidden {
-  left: -200%;
+  opacity: 0;
+  z-index: -1;
 }
 
 .bonus {
-  left: 200%;
-  top: 30%;
   background: url(./images/bg-pentagon.svg) no-repeat center center;
   display: -ms-grid;
   display: grid;
@@ -230,16 +229,16 @@ main {
   justify-items: center;
   padding: 0 6rem;
   opacity: 0;
-  -webkit-transition: left 1s ease 0.5s, opacity 5.5s ease;
-  transition: left 1s ease 0.5s, opacity 5.5s ease;
+  -webkit-transition: opacity 1s ease;
+  transition: opacity 1s ease;
+  z-index: -1;
 }
 
 .bonus.open {
-  left: 50%;
-  top: 35%;
+  z-index: 2;
   opacity: 1;
-  -webkit-transition: left 1s ease 1.5s, opacity 1.5s ease;
-  transition: left 1s ease 1.5s, opacity 1.5s ease;
+  -webkit-transition: opacity 1.5s ease;
+  transition: opacity 1.5s ease;
 }
 
 .bonus .item {
@@ -288,8 +287,7 @@ main {
 }
 
 .stage-1 {
-  left: 50%;
-  top: 300%;
+  z-index: -1;
   opacity: 0;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -303,8 +301,9 @@ main {
 }
 
 .stage-1.step-1 {
-  -webkit-transition: width 0.5s ease , top 1.5s ease 0.5s;
-  transition: width 0.5s ease , top 1.5s ease 0.5s;
+  -webkit-transition: width 0.5s ease , opacity 1.5s ease 0.5s;
+  transition: width 0.5s ease , opacity 1.5s ease 0.5s;
+  opacity: 1;
 }
 
 .stage-1.step-1 .placeholder {
@@ -313,11 +312,10 @@ main {
 }
 
 .stage-1.open {
-  -webkit-transition: width 0.5s ease , top 1.5s ease 2.5s;
-  transition: width 0.5s ease , top 1.5s ease 2.5s;
-  left: 50%;
-  top: 35%;
+  -webkit-transition: width 0.5s ease , opacity 1.5s ease 2.5s;
+  transition: width 0.5s ease , opacity 1.5s ease 2.5s;
   opacity: 1;
+  z-index: 3;
 }
 
 .stage-1.final {
@@ -564,6 +562,9 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   text-align: center;
 }
 
@@ -672,10 +673,9 @@ main {
     margin: 0;
   }
   .bonus {
-    display: block;
+    display: flow-root;
     background-size: contain;
     padding: 0;
-    top: 35%;
   }
   .bonus .item {
     width: 7rem;
@@ -710,12 +710,7 @@ main {
     width: 60%;
   }
   .stage-1.open {
-    left: 50%;
     top: 25%;
-  }
-  .stage-1.step-1 {
-    -webkit-transition: width 0.5s ease , top 1.5s ease 0.5s;
-    transition: width 0.5s ease , top 1.5s ease 0.5s;
   }
   .stage-1.step-1 .placeholder {
     background-color: transparent;
@@ -775,6 +770,9 @@ main {
   .rules-container .rules-inner #close-rules {
     top: 100%;
     right: 50%;
+  }
+  .x5, .x3 {
+    top: 85%;
   }
   .container {
     max-width: 90%;
