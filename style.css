@@ -316,7 +316,8 @@ main {
 }
 
 .stage-1.step-1 .placeholder {
-  background-color: transparent;
+  -webkit-animation: itemScale 1s 3;
+          animation: itemScale 1s 3;
 }
 
 .stage-1.open {
@@ -723,6 +724,15 @@ main {
   .stage-1.open {
     -webkit-transform: translateY(-220%);
             transform: translateY(-220%);
+  }
+  .stage-1.step-1 {
+    -webkit-transition: width 0.5s ease , -webkit-transform 1.5s ease 0.5s;
+    transition: width 0.5s ease , -webkit-transform 1.5s ease 0.5s;
+    transition: width 0.5s ease , transform 1.5s ease 0.5s;
+    transition: width 0.5s ease , transform 1.5s ease 0.5s , -webkit-transform 1.5s ease 0.5s;
+  }
+  .stage-1.step-1 .placeholder {
+    background-color: transparent;
   }
   .stage-1 .placeholder {
     width: 8rem;

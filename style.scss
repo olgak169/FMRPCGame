@@ -237,7 +237,7 @@ main {
     &.step-1 {
         transition: width 0.5s ease , transform 1.5s ease 0.5s;
         .placeholder{
-            background-color: transparent;
+            animation: itemScale 1s 3;
         }
     }
     &.open {
@@ -564,6 +564,12 @@ main {
         }
         &.open {
             transform: translateY(-220%);
+        }
+        &.step-1 {
+            transition: width 0.5s ease , transform 1.5s ease 0.5s;
+            .placeholder{
+                background-color: transparent;
+            }
         }
         .placeholder {
             width: 8rem;
