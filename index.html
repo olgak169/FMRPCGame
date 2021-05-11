@@ -24,9 +24,6 @@
                 <p>To reset score click on the score card</p>
             </div>
         </div>
-        <button class="rules-btn btn">Rules</button>
-        <button class="x5 btn">5 item game</button>
-        <button class="x3 btn hidden">3 item game</button>
         <header>
             <div class="logo">
                 <img src="./images/logo.svg" alt="game logo" id="logo" />
@@ -36,44 +33,47 @@
                 <span id="score"></span>
             </div>
         </header>
-
-        <div class="container original">
-            <div class="item paper item-init" id="paper" data-value="paper">
-                <div class="item-inner"></div>
+        <main>
+            <div class="container original">
+                <div class="item paper item-init" id="paper" data-value="paper">
+                    <div class="item-inner"></div>
+                </div>
+                <div class="item scissors item-init" id="scissors" data-value="scissors">
+                    <div class="item-inner"></div>
+                </div>
+                <div class="item rock item-init" id="rock" data-value="rock">
+                    <div class="item-inner"></div>
+                </div>
             </div>
-            <div class="item scissors item-init" id="scissors" data-value="scissors">
-                <div class="item-inner"></div>
+            <div class="container bonus">
+                <div class="item scissors item-init" id="scissorsB" data-value="scissors">
+                    <div class="item-inner"></div>
+                </div>
+                <div class="item spock item-init" id="spockB" data-value="spock">
+                    <div class="item-inner"></div>
+                </div>
+                <div class="item paper item-init" id="paperB" data-value="paper">
+                    <div class="item-inner"></div>
+                </div>
+                <div class="item lizard item-init" id="lizardB" data-value="lizard">
+                    <div class="item-inner"></div>
+                </div>
+                <div class="item rock item-init" id="rockB" data-value="rock">
+                    <div class="item-inner"></div>
+                </div>
             </div>
-            <div class="item rock item-init" id="rock" data-value="rock">
-                <div class="item-inner"></div>
+            <div class="container stage-1">
+                <div class="placeholder pl-left"></div>
+                <div class="placeholder pl-right"></div>
+                <div class="outcome">
+                    <span id="outcome-title"></span>
+                    <button id="restart-game">Play again</button>
+                </div>
             </div>
-        </div>
-        <div class="container bonus">
-            <div class="item scissors item-init" id="scissorsB" data-value="scissors">
-                <div class="item-inner"></div>
-            </div>
-            <div class="item spock item-init" id="spockB" data-value="spock">
-                <div class="item-inner"></div>
-            </div>
-            <div class="item paper item-init" id="paperB" data-value="paper">
-                <div class="item-inner"></div>
-            </div>
-            <div class="item lizard item-init" id="lizardB" data-value="lizard">
-                <div class="item-inner"></div>
-            </div>
-            <div class="item rock item-init" id="rockB" data-value="rock">
-                <div class="item-inner"></div>
-            </div>
-        </div>
-        <div class="container stage-1">
-            <div class="placeholder pl-left"></div>
-            <div class="placeholder pl-right"></div>
-            <div class="outcome">
-                <span id="outcome-title"></span>
-                <button id="restart-game">Play again</button>
-            </div>
-        </div>
-
+            <button class="rules-btn btn">Rules</button>
+            <button class="x5 btn">5 item game</button>
+            <button class="x3 btn hidden">3 item game</button>
+        </main>
         <script src="app.js"></script>
     </body>
 </html>
