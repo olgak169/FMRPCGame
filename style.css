@@ -316,8 +316,7 @@ main {
 }
 
 .stage-1.step-1 .placeholder {
-  -webkit-animation: itemScale 1s 3;
-          animation: itemScale 1s 3;
+  background-color: transparent;
 }
 
 .stage-1.open {
