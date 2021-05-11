@@ -46,14 +46,14 @@ body {
 }
 
 .x5, .x3 {
-  right: 3%;
-  bottom: 14%;
+  left: 85%;
+  top: 81%;
   width: 11rem;
 }
 
 .rules-btn {
-  bottom: 20%;
-  right: 3%;
+  top: 75%;
+  left: 85%;
 }
 
 .rules-container {
@@ -180,6 +180,7 @@ header {
 
 main {
   width: 100%;
+  max-width: 100vw;
   height: 100%;
   position: relative;
 }
@@ -636,14 +637,12 @@ main {
     line-height: 3rem;
   }
   .rules-btn {
-    right: unset;
     left: 50%;
     -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
   }
   .x3,
   .x5 {
-    right: unset;
     left: 50%;
     -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
@@ -802,7 +801,7 @@ main {
   .stage-1 .placeholder {
     width: 6rem;
     height: 6rem;
-    margin-bottom: 4rem;
+    margin: 0;
   }
   .bonus {
     padding: 0 1rem;
@@ -837,9 +836,6 @@ main {
 @media (max-width: 420px) {
   .container {
     max-width: 98%;
-  }
-  .bonus {
-    height: 28vh;
   }
   .bonus .scissors {
     left: 35%;
