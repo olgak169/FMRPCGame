@@ -371,7 +371,7 @@ main {
 }
 .paper {
     background: $paperGradient;
-    animation-delay: 1s;
+    animation-delay: 0.5s;
     &::before {
         background: hsl(230, 89%, 35%);
     }
@@ -382,6 +382,7 @@ main {
 }
 .scissors {
     background: $scissorsGradient;
+    animation-delay: 0.8s;
     &::before {
         background: hsl(39, 89%, 29%);
     }
@@ -392,7 +393,7 @@ main {
 }
 .rock {
     background: $rockGradient;
-    animation-delay: 1.5s;
+    animation-delay: 0.6s;
     &::before {
         background: hsl(349, 71%, 32%);
     }
@@ -403,7 +404,7 @@ main {
 }
 .lizard {
     background: $lizardGradient;
-    animation-delay: 1.5s;
+    animation-delay: 1s;
     &::before {
         background: hsl(261, 73%, 48%);
     }
@@ -414,7 +415,7 @@ main {
 }
 .spock {
     background: $spockGradient;
-    animation-delay: 1.5s;
+    animation-delay: 0.4s;
     &::before {
         background: hsl(189, 59%, 43%);
     }
@@ -569,11 +570,11 @@ main {
             height: 8rem;
         }
         .pl-left {
-            left: 0rem;
+            left: 1rem;
             margin-bottom: 3rem;
         }
         .pl-right {
-            right: 0rem;
+            right: 1rem;
             margin-bottom: 3rem;
         }
         .item-choice {
@@ -634,9 +635,9 @@ main {
             width: 85%;
         }
         .placeholder {
-            width: 6rem;
-            height: 6rem;
-            margin: 0;
+            width: 5.5rem;
+            height: 5.5rem;
+            margin-bottom: 3rem;
         }
     }
     .bonus {

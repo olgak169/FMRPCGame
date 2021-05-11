@@ -486,8 +486,8 @@ main {
 .paper {
   background: -webkit-gradient(linear, left top, left bottom, from(#4865f4), to(#5671f5));
   background: linear-gradient(#4865f4, #5671f5);
-  -webkit-animation-delay: 1s;
-          animation-delay: 1s;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
 }
 
 .paper::before {
@@ -502,6 +502,8 @@ main {
 .scissors {
   background: -webkit-gradient(linear, left top, left bottom, from(#ec9e0e), to(#eca922));
   background: linear-gradient(#ec9e0e, #eca922);
+  -webkit-animation-delay: 0.8s;
+          animation-delay: 0.8s;
 }
 
 .scissors::before {
@@ -516,8 +518,8 @@ main {
 .rock {
   background: -webkit-gradient(linear, left top, left bottom, from(#dc2e4e), to(#dd405d));
   background: linear-gradient(#dc2e4e, #dd405d);
-  -webkit-animation-delay: 1.5s;
-          animation-delay: 1.5s;
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
 }
 
 .rock::before {
@@ -532,8 +534,8 @@ main {
 .lizard {
   background: -webkit-gradient(linear, left top, left bottom, from(#834fe3), to(#8c5de5));
   background: linear-gradient(#834fe3, #8c5de5);
-  -webkit-animation-delay: 1.5s;
-          animation-delay: 1.5s;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
 }
 
 .lizard::before {
@@ -548,8 +550,8 @@ main {
 .spock {
   background: -webkit-gradient(linear, left top, left bottom, from(#40b9ce), to(#52bed1));
   background: linear-gradient(#40b9ce, #52bed1);
-  -webkit-animation-delay: 1.5s;
-          animation-delay: 1.5s;
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
 }
 
 .spock::before {
@@ -728,11 +730,11 @@ main {
     height: 8rem;
   }
   .stage-1 .pl-left {
-    left: 0rem;
+    left: 1rem;
     margin-bottom: 3rem;
   }
   .stage-1 .pl-right {
-    right: 0rem;
+    right: 1rem;
     margin-bottom: 3rem;
   }
   .stage-1 .item-choice {
@@ -799,9 +801,9 @@ main {
     width: 85%;
   }
   .stage-1 .placeholder {
-    width: 6rem;
-    height: 6rem;
-    margin: 0;
+    width: 5.5rem;
+    height: 5.5rem;
+    margin-bottom: 3rem;
   }
   .bonus {
     padding: 0 1rem;
