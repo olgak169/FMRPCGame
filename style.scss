@@ -42,14 +42,14 @@ body {
     padding: 0.6rem 2.2rem;
     cursor: pointer;
     z-index: 4;
-    transition: transform 1s ease 1s;
+    transition: left 1s ease 1s;
     &:active,
     &:focus {
         outline: none;
     }
     
     &.hidden {
-        transform: translateX(300%);
+        left: 300%;
     }
 }
 .x5, .x3 {
