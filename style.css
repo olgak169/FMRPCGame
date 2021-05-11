@@ -44,12 +44,12 @@ body {
 
 .x5, .x3 {
   left: 80%;
-  top: 81%;
+  top: 75%;
   width: 11rem;
 }
 
 .rules-btn {
-  top: 75%;
+  top: 68%;
   left: 80%;
 }
 
@@ -771,8 +771,11 @@ main {
     top: 100%;
     right: 50%;
   }
+  .rules-btn {
+    top: 70%;
+  }
   .x5, .x3 {
-    top: 85%;
+    top: 78%;
   }
   .container {
     max-width: 90%;
