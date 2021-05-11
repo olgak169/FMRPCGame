@@ -61,6 +61,8 @@ function gameSetUp() {
         containerBonus.classList.remove('open')
         setTimeout(() => {
             logo.src = './images/logo.svg'
+            btnOriginalGame.style.display = 'none'
+            btnBonusGame.style.display = 'block'
         }, 2500);
     } else {
         options = ['rock', 'paper', 'scissors','lizard', 'spock']
@@ -70,6 +72,8 @@ function gameSetUp() {
         containerBonus.classList.add('open')
         setTimeout(() => {
             logo.src = './images/logo-bonus.svg'
+            btnBonusGame.style.display = 'none'
+            btnOriginalGame.style.display = 'block'
         }, 2500);
         rulesImg.src = './images/image-rules-bonus.svg'
     }
