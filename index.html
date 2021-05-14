@@ -14,20 +14,8 @@
         <title>RPC Game</title>
     </head>
     <body>
-        <div class="rules-container">
-            <div class="rules-inner">
-                <h3>Rules</h3>
-                <button id="close-rules">
-                    <img src="./images/icon-close.svg" alt="close icon" />
-                </button>
-                <img src="./images/image-rules.svg" alt="rules" id="rules-img" />
-                <p>To reset score click on the score card</p>
-            </div>
-        </div>
         <header>
-            <div class="logo">
-                <img src="./images/logo.svg" alt="game logo" id="logo" />
-            </div>
+            <div class="logo"></div>
             <div class="score-card">
                 <p>score</p>
                 <span id="score"></span>
@@ -35,34 +23,42 @@
         </header>
         <main>
             <div class="container original">
-                <div class="item paper item-init" id="paper" data-value="paper">
+                <div class="item paper item-original" id="paperA" data-value="paper">
                     <div class="item-inner"></div>
                 </div>
-                <div class="item scissors item-init" id="scissors" data-value="scissors">
+                <div
+                    class="item scissors item-original"
+                    id="scissorsA"
+                    data-value="scissors"
+                >
                     <div class="item-inner"></div>
                 </div>
-                <div class="item rock item-init" id="rock" data-value="rock">
-                    <div class="item-inner"></div>
-                </div>
-            </div>
-            <div class="container bonus">
-                <div class="item scissors item-init" id="scissorsB" data-value="scissors">
-                    <div class="item-inner"></div>
-                </div>
-                <div class="item spock item-init" id="spockB" data-value="spock">
-                    <div class="item-inner"></div>
-                </div>
-                <div class="item paper item-init" id="paperB" data-value="paper">
-                    <div class="item-inner"></div>
-                </div>
-                <div class="item lizard item-init" id="lizardB" data-value="lizard">
-                    <div class="item-inner"></div>
-                </div>
-                <div class="item rock item-init" id="rockB" data-value="rock">
+                <div class="item rock item-original" id="rockA" data-value="rock">
                     <div class="item-inner"></div>
                 </div>
             </div>
-            <div class="container stage-1">
+            <div class="container bonus hidden">
+                <div
+                    class="item scissors item-bonus"
+                    id="scissorsB"
+                    data-value="scissors"
+                >
+                    <div class="item-inner"></div>
+                </div>
+                <div class="item spock item-bonus" id="spockB" data-value="spock">
+                    <div class="item-inner"></div>
+                </div>
+                <div class="item paper item-bonus" id="paperB" data-value="paper">
+                    <div class="item-inner"></div>
+                </div>
+                <div class="item lizard item-bonus" id="lizardB" data-value="lizard">
+                    <div class="item-inner"></div>
+                </div>
+                <div class="item rock item-bonus" id="rockB" data-value="rock">
+                    <div class="item-inner"></div>
+                </div>
+            </div>
+            <div class="container final hidden">
                 <div class="placeholder pl-left"></div>
                 <div class="placeholder pl-right"></div>
                 <div class="outcome">
@@ -70,10 +66,26 @@
                     <button id="restart-game">Play again</button>
                 </div>
             </div>
-            <button class="rules-btn btn">Rules</button>
-            <button class="x5 btn">5 item game</button>
-            <button class="x3 btn hidden">3 item game</button>
         </main>
+        <div class="overlay">
+            <div class="overlay-inner">
+                <img src="./images/circles.svg" alt="circle" id="circle-left" />
+                <img src="./images/circles.svg" alt="circle" id="circle-right" />
+            </div>
+        </div>
+        <div class="rules-container">
+            <div class="rules-inner">
+                <h3>Rules</h3>
+                <button id="close-modal">
+                    <img src="./images/icon-close.svg" alt="close icon" />
+                </button>
+                <img src="./images/image-rules.svg" alt="rules" id="rules-img" />
+                <p>to reset the score click on the score card</p>
+            </div>
+        </div>
+        <button class="btn btn-rules">Rules</button>
+        <button class="btn btn-five">5x game</button>
+        <button class="btn btn-three hidden">3x game</button>
         <script src="app.js"></script>
     </body>
 </html>

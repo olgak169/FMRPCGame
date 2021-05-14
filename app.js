@@ -1,22 +1,26 @@
-const btnOpen = document.querySelector('.rules-btn')
-const btnClose = document.getElementById('close-rules')
-const modalOriginal = document.querySelector('.rules-container')
-const btnBonusGame = document.querySelector('.x5')
-const btnOriginalGame = document.querySelector('.x3')
-const logo =document.getElementById('logo')
+
+const btnRules = document.querySelector('.btn-rules')
+const btnBonus = document.querySelector('.btn-five')
+const btnOriginal = document.querySelector('.btn-three')
+const logo = document.querySelector('.logo')
+const rules = document.querySelector('.rules-container')
 const rulesImg = document.getElementById('rules-img')
+const btnCloseModal = document.getElementById('close-modal')
 const scoreCardEl = document.querySelector('.score-card')
+const scoreEl = document.getElementById('score')
+const restart = document.getElementById('restart-game')
+const placeholders = document.querySelectorAll('.placeholder')
+const circleLeft = document.getElementById('circle-left')
+const circleRight = document.getElementById('circle-right')
 
-btnOpen.addEventListener('click', () => {
-    modalOriginal.classList.add('open')
-})
-btnClose.addEventListener('click', () => {
-    modalOriginal.classList.remove('open')
-})
+const contOriginal = document.querySelector('.original')
+const contBonus = document.querySelector('.bonus')
+const contFinal  = document.querySelector('.final')
 
-const paperBtn = document.getElementById('paper')
-const rockBtn = document.getElementById('rock')
-const scissorsBtn = document.getElementById('scissors')
+
+const paperBtn = document.getElementById('paperA')
+const rockBtn = document.getElementById('rockA')
+const scissorsBtn = document.getElementById('scissorsA')
 
 const paperBnsBtn = document.getElementById('paperB')
 const rockBnsBtn = document.getElementById('rockB')
@@ -24,12 +28,6 @@ const scissorsBnsBtn = document.getElementById('scissorsB')
 const lizardBnsBtn = document.getElementById('lizardB')
 const spockBnsBtn = document.getElementById('spockB')
 
-const containerBonus = document.querySelector('.bonus')
-const containerOriginal = document.querySelector('.original')
-const containerStageOne = document.querySelector('.stage-1')
-const placeholders = document.querySelectorAll('.placeholder')
-const restart = document.getElementById('restart-game')
-const scoreEl = document.getElementById('score')
 let score = localStorage.getItem('score')
 if (score != null) {
     score = score
@@ -41,43 +39,20 @@ if (score != null) {
 let options  = []
 let bonusGame = false;
 
-btnBonusGame.addEventListener('click', () =>{
+btnBonus.addEventListener('click', () => {
     bonusGame = true
     gameSetUp()
 })
-btnOriginalGame.addEventListener('click', () =>{
+btnOriginal.addEventListener('click', () => {
     bonusGame = false
     gameSetUp()
 })
-
-
-function gameSetUp() {
-    if (bonusGame == false) {
-        options = ['rock', 'paper', 'scissors']
-        rulesImg.src = './images/image-rules.svg'
-        btnOriginalGame.classList.add('hidden')
-        btnBonusGame.classList.remove('hidden')
-        containerOriginal.classList.remove('hidden')
-        containerBonus.classList.remove('open')
-        setTimeout(() => {
-            logo.src = './images/logo.svg'
-            btnOriginalGame.style.display = 'none'
-            btnBonusGame.style.display = 'block'
-        }, 2500);
-    } else {
-        options = ['rock', 'paper', 'scissors','lizard', 'spock']
-        btnBonusGame.classList.add('hidden')
-        btnOriginalGame.classList.remove('hidden')
-        containerOriginal.classList.add('hidden')
-        containerBonus.classList.add('open')
-        setTimeout(() => {
-            logo.src = './images/logo-bonus.svg'
-            btnBonusGame.style.display = 'none'
-            btnOriginalGame.style.display = 'block'
-        }, 2500);
-        rulesImg.src = './images/image-rules-bonus.svg'
-    }
-}
+btnRules.addEventListener('click', () => {
+    rules.classList.add('open')
+})
+btnCloseModal.addEventListener('click', () => {
+    rules.classList.remove('open')
+})
 scoreCardEl.addEventListener('click', resetScore)
 
 paperBtn.addEventListener('click', () => {stepOne(paperBtn)})
@@ -89,43 +64,53 @@ rockBnsBtn.addEventListener('click', () => {stepOne(rockBnsBtn)})
 scissorsBnsBtn.addEventListener('click', () => {stepOne(scissorsBnsBtn)})
 lizardBnsBtn.addEventListener('click', () => {stepOne(lizardBnsBtn)})
 spockBnsBtn.addEventListener('click', () => {stepOne(spockBnsBtn)})
-    
-gameSetUp()
 
+function gameSetUp() {
+    if (bonusGame == false) {
+        options = ['rock', 'paper', 'scissors']
+        rulesImg.src = './images/image-rules.svg'
+        btnBonus.classList.remove('hidden')
+        btnOriginal.classList.add('hidden')
+        contBonus.classList.add('hidden')
+        contOriginal.classList.remove('hidden')
+        logo.classList.remove('bonus-game')
+    } else {
+        options = ['rock', 'paper', 'scissors','lizard', 'spock']
+        rulesImg.src = './images/image-rules-bonus.svg'
+        btnOriginal.classList.remove('hidden')
+        btnBonus.classList.add('hidden')
+        contBonus.classList.remove('hidden')
+        contOriginal.classList.add('hidden')
+        logo.classList.add('bonus-game')
+    }
+}
 function stepOne(elem) {
     if (bonusGame == false) {
-        let items = document.querySelectorAll('.original .item-init')
-        let i = 0.2
+        let items = document.querySelectorAll('.item-original')
         items.forEach(item => {
-            item.style.animationDelay = i + 's';
             item.classList.add('clicked')
-            i = i+0.3;
         })
     } else {
-        let items = document.querySelectorAll('.bonus .item-init')
-        let i = 0.1
+        let items = document.querySelectorAll('.item-bonus')
         items.forEach(item => {
-            item.style.animationDelay = i + 's';
             item.classList.add('clicked')
-            i = i+0.1;
         })
     }
     
     if (bonusGame == false) {
-        containerOriginal.classList.add('hidden')
-        containerStageOne.classList.add('open')
-        btnBonusGame.classList.add('hidden')
-        gameLogic(elem)
+        contOriginal.classList.add('hidden')
+        contFinal.classList.remove('hidden')
+        btnBonus.classList.add('hidden')
+        gameOrginal(elem)
     } else {
-        containerBonus.classList.remove('open')
-        containerStageOne.classList.add('open')
-        btnOriginalGame.classList.add('hidden')
-        gameLogic(elem)
+        contBonus.classList.add('hidden')
+        contFinal.classList.remove('hidden')
+        btnOriginal.classList.add('hidden')
+        gameOrginal(elem)
     }
-    
 }
 
-function gameLogic(el) {
+function gameOrginal(el) {
     let choice = el.dataset.value
     let randomChoice = Math.floor(Math.random() * options.length)
     let compChoice = options[randomChoice]
@@ -202,9 +187,9 @@ function gameLogic(el) {
             break;
     }
 }
+
 function stepTwo(opt1,opt2,winner) {
-    let playerEl = document.querySelector('.pl-left')
-    let compEl = document.querySelector('.pl-right')
+    
     const playerChoice = document.createElement('div')
     const playerInner = document.createElement('div')
     const compInner = document.createElement('div')
@@ -212,32 +197,35 @@ function stepTwo(opt1,opt2,winner) {
 
     playerInner.classList.add('item-inner')
     compInner.classList.add('item-inner')
-    compChoice.classList.add('item', 'item-choice', opt2)
-    playerChoice.classList.add('item', 'item-choice', opt1)
+    compChoice.classList.add('item', 'item-choice','item-comp', opt2)
+    playerChoice.classList.add('item', 'item-choice','item-player', opt1)
     compChoice.appendChild(compInner)
     playerChoice.appendChild(playerInner)
 
     setTimeout(() => {
-        containerStageOne.classList.add('step-1')
-        containerStageOne.appendChild(playerChoice)
-    }, 3500);
+        contFinal.classList.add('step-1')
+        contFinal.appendChild(playerChoice)
+    }, 800);
     setTimeout(() => {
-        containerStageOne.appendChild(compChoice)
-    }, 4000);
+        contFinal.appendChild(compChoice)
+    }, 3000);
     if (winner == 'player') {
         setTimeout(() => {
-            playerEl.classList.add('open')
-        }, 5500);
+            circleLeft.classList.add('open')
+        }, 4500);
         
     } else if (winner == 'comp'){
         setTimeout(() => {
-            compEl.classList.add('open')
-        }, 5500);
+            circleRight.classList.add('open')
+        }, 4500);
+        
     }
     setTimeout(() => {
+        contFinal.classList.add('step-2')
         stepThree(winner)
-    }, 6000);
+    }, 4500);
 }
+
 function stepThree(won) {
     let outcome = document.querySelector('.outcome')
     let outcomeText = document.getElementById('outcome-title')
@@ -245,18 +233,15 @@ function stepThree(won) {
         scoreCardEl.classList.add('updated')
         score++
         scoreEl.innerText = score
-        containerStageOne.classList.add('final')
         outcome.classList.add('open')
         outcomeText.innerText = 'You win'
     } else if (won == 'comp') {
         scoreCardEl.classList.add('updated')
         score--
         scoreEl.innerText = score
-        containerStageOne.classList.add('final')
         outcome.classList.add('open')
         outcomeText.innerText = 'You lose'
     } else if(won == 'draw'){
-        containerStageOne.classList.add('final')
         outcome.classList.add('open')
         outcomeText.innerText = 'Draw'
     }
@@ -267,12 +252,12 @@ function stepFour() {
     scoreCardEl.classList.remove('updated')
     let outcome = document.querySelector('.outcome')
     outcome.classList.remove('open')
-    containerStageOne.classList.remove('final','step-1')
+    contFinal.classList.remove('step-1','step-2')
 
     let itemsChoice = document.querySelectorAll('.item-choice')
     itemsChoice.forEach(item => {
         setTimeout(() => {
-            item.style.animation = 'itemsFade 0.9s 0.2s'
+            item.style.animation = 'itemFade 0.9s 0.2s'
         },200);
         setTimeout(() => {
             item.remove()
@@ -284,25 +269,27 @@ function stepFour() {
         placeholder.classList.add('fade')
         setTimeout(() => {
             placeholder.classList.remove('fade')
-        }, 1000);
+        }, 2000);
         })
 
-    let itemsInit = document.querySelectorAll('.item-init')
-    itemsInit.forEach(item => {
+    let items = document.querySelectorAll('.item')
+    items.forEach(item => {
         item.classList.remove('clicked')
     })
+    circleRight.classList.remove('open')
+    circleLeft.classList.remove('open')
 
     if (bonusGame == false) {
         setTimeout(() => {
-            containerStageOne.classList.remove('open')
-            containerOriginal.classList.remove('hidden')
-            btnBonusGame.classList.remove('hidden')
+            contFinal.classList.add('hidden')
+            contOriginal.classList.remove('hidden')
+            btnBonus.classList.remove('hidden')
         }, 1000);
     } else {
         setTimeout(() => {
-            containerStageOne.classList.remove('open')
-            containerBonus.classList.add('open')
-            btnOriginalGame.classList.remove('hidden')
+            contFinal.classList.add('hidden')
+            contBonus.classList.remove('hidden')
+            btnOriginal.classList.remove('hidden')
         }, 1000);
     }
 }
@@ -314,3 +301,4 @@ function resetScore() {
     scoreEl.innerText = score
     localStorage.setItem('score', score)
 }
+gameSetUp()
