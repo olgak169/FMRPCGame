@@ -181,11 +181,31 @@ main {
             margin: 3rem 0 0rem 3rem;
             grid-column: 3;
         }
+        .item-choice::after {
+            color: #fff;
+            color: $white;
+            text-transform: uppercase;
+            text-align: center;
+            font-size: 1.4rem;
+            letter-spacing: 4px;
+            width: 100%;
+            height: 1.4rem;
+            position: absolute;
+            top: -3em;
+            left: 50%;
+            transform: translateX(-50%);
+        }
         .item-player {
             grid-column: 1;
+            &::after {
+                content: 'You picked';
+            }
         }
         .item-comp {
             grid-column: 3;
+            &::after {
+                content: 'The house picked';
+            }
         }
     &.step-1 {
         .item-comp {
@@ -280,6 +300,7 @@ main {
 .item-choice {
     width: var(--sz-large);
     height: var(--sz-large);
+    position: relative;
 }
 .item {
     border-radius: 50%;
@@ -510,6 +531,9 @@ main {
         background-size: 60%;
     }
     .final {
+        .item-choice::after {
+            font-size: 1rem;
+        }
         &.step-2 {
             width: 45rem;
         }
@@ -608,6 +632,10 @@ main {
     }
     .final {
         padding: 0 3rem;
+        .item-choice::after {
+            width: 130%;
+            font-size: 0.9rem;
+        }
         .pl-left,
         .pl-right {
             margin: 0.5rem 0 0rem 0.5rem;
@@ -696,6 +724,9 @@ main {
     }
     .final {
         padding: 0;
+        .item-choice::after {
+            font-size: 0.6rem;
+        }
     }
     .overlay .overlay-inner {
         width: 90%;
